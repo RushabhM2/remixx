@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import { withEmotionCache } from '@emotion/react'
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, Heading } from '@chakra-ui/react'
 import {
   Links,
   LiveReload,
@@ -81,6 +81,7 @@ export default function App() {
   return (
     <Document>
       <ChakraProvider>
+        <Heading as='h1' size='4xl' noOfLines={1} m="20px">REMIX WARS</Heading>
         <Outlet />
       </ChakraProvider>
     </Document>
