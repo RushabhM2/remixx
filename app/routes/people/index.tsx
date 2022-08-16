@@ -47,18 +47,16 @@ export default function PeopleIndex() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4", padding: "20px" }}>
       <Grid 
-        templateColumns='repeat(3, 1fr)'
+        templateColumns='repeat(5, 1fr)'
         templateRows='repeat(2, 1fr)'
         gap={3}
         >
         {displayedList.map((person: Person) => (
           <GridItem>
-            {/* <Link to={`${getIdFromUrl(film.url)}`} key={film.url}> */}
-              <ResourceCard
-                name={person.name}
-                image={`https://starwars-visualguide.com/assets/img/films/${getIdFromUrl(person.url)}.jpg`}
-              />
-            {/* </Link> */}
+            <ResourceCard
+              name={person.name}
+              image={`https://starwars-visualguide.com/assets/img/characters/${getIdFromUrl(person.url)}.jpg`}
+            />
           </GridItem>
         ))}
       </Grid>

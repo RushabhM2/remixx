@@ -1,4 +1,4 @@
-import { Box, Heading, Button, UnorderedList, ListItem } from '@chakra-ui/react'
+import { Box, Heading, Button, ListItem, UnorderedList } from '@chakra-ui/react'
 import { Film } from '../routes/films/index'
 import { getIdFromUrl } from '../utils'
 
@@ -20,11 +20,11 @@ export const FilmCard = ({ film }: FilmCardProps) => {
           {film.opening_crawl}
         </Box>
         <Heading as='h5' noOfLines={1} m="8px">Characters</Heading>
-        {film.characters.map((character: string) => {
-          <ListItem>
-            <Button>{character}</Button>
-          </ListItem>
-        })}
+          {film.characters.map((character: string) => (
+            <Button colorScheme='teal' size='lg' m='1'>
+              {getIdFromUrl(character)}
+            </Button>
+          ))}
       </>
     </Box>
   );
